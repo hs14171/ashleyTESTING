@@ -3,15 +3,17 @@
 %% Harry Stern, 2017, for ASHLEy
 %% Supervised by Oliver Ray
 
+:- style_check(-discontiguous).
+:- style_check(-singleton).
+:- style_check(no_effect).
 
 :-['Lexer.pl'].
 :-['DCG.pl'].
 :-['HoareLogic.pl'].
-:-['Why.pl'].
+:-['Why.pl']. 
 :-['WeakestPreconditions.pl'].
 :-['Prove.pl'].
 :-['Decode.pl'].
-:-['ACSL.pl'].
 
 
 % generates T tabs
