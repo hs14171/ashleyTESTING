@@ -230,26 +230,6 @@ prove(Program) :-
 		proof(P,[Funcs,call(F,[X,Z])],Q,G).
 
 
-	distinctlist([]).
-	distinctlist([V|Vars]) :- \+member(V,Vars), distinctlist(Vars).
-
-	% converts between x and variable(x)
-	varexp(X,variable(X)) :- atomic(X), \+X=[].
-	varexp([],[]).
-	varexp([X|Vars],[V|Exps]) :- varexp(X,V), varexp(Vars,Exps).
-
-
-	%% predicate for determining if a procedure is recursive
-	recursive([F,_,T]) :- recursive(F,T).
-	recursive(F,call(F,_)).
-	recursive(F,seq_(T1,_,T2)) :- recursive(F,T1); recursive(F,T2).
-	recursive(F,seq(T1,T2)) :- recursive(F,T1); recursive(F,T2).
-
-	% rule of adaptation
-	%% proof(P,[Funcs,call(F,[A,E])],Q,[[]]) :-
-	%% 	member([F,[X,Y],T],Funcs),
-	%% 	recursive([F,[X,Y],T]),
-
 
 		
 
